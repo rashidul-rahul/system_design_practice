@@ -8,11 +8,11 @@ mysql = MySQL(server)
 # config
 server.config["MYSQL_HOST"] = os.environ.get("MYSQL_HOST")
 server.config["MYSQL_DATABASE"] = os.environ.get("MYSQL_DATABASE")
-server.config["MYSQL_USERNAME"] = os.environ.get("MYSQL_USERNAME")
+server.config["MYSQL_USER"] = os.environ.get("MYSQL_USER")
 server.config["MYSQL_PASSWORD"] = os.environ.get("MYSQL_PASSWORD")
 
 
-@server.route("/login", method=["POST"])
+@server.route("/login", methods=["POST"])
 def login():
     auth = request.authorization
     if not auth:
@@ -37,7 +37,7 @@ def login():
         return "invalid credentials", 401
 
 
-@server.route("/login", method=["POST"])
+@server.route("/validate", methods=["POST"])
 def validate():
     encoded_jwt = request.headers["Authorization"]
     if not encoded_jwt:

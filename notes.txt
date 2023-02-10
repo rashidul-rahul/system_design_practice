@@ -1,0 +1,11 @@
+=> docker build current directory
+docker build .
+
+=> add tagline for docker image
+docker tag <Buid-SHA> rahulrashidul/auth:latest
+
+=> push docker image:
+docker push rahulrashidul/auth:latest
+
+apply manifest files ()
+kubectl apply -f ./
