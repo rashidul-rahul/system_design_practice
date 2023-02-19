@@ -43,7 +43,7 @@ def upload():
         return "not authorized", 401
 
 
-@server.route("/dpwnload", methods=["GET"])
+@server.route("/download", methods=["GET"])
 def download():
     pass
 

@@ -2,10 +2,24 @@
 docker build .
 
 => add tagline for docker image
-docker tag <Buid-SHA> rahulrashidul/auth:latest
+docker tag <Build-SHA> rahulrashidul/auth:latest
 
 => push docker image:
 docker push rahulrashidul/auth:latest
 
-apply manifest files ()
+=> apply manifest files ()
 kubectl apply -f ./
+
+=> ingress file to access the pods outside of the k8s
+
+=> check minikube addons list
+minikube addons list
+
+=> enable ingress from addons
+minikube addons enable ingress
+
+=> run the minikube tunnel
+minikube tunnel
+
+=> scaling a service
+kubectl scale deployment --replicas=0 gatewau
